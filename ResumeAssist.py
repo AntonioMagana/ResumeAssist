@@ -13,13 +13,16 @@ from flask_login import UserMixin
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+db = SQLAlchemy(app)
 
-#Change this to be mySQL
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-#db = SQLAlchemy(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
 
 #Decide if we want to use
-#bootstrap = Bootstrap(app)
+#bootstrap = Bootstrap(app) 
 
 """
 ==================
@@ -51,7 +54,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-#Update everything to be with mySQL
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(15), unique=True)
@@ -63,7 +66,7 @@ class User(UserMixin, db.Model):
         return f'<user: {self.username}>'
 
 
-class Resume(db.Model):
+class ResumeList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     contact = db.Column(db.String(200))
     work = db.Column(db.String(200))
