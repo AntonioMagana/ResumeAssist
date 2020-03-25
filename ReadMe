@@ -1,1 +1,4 @@
-This is the read.me file
+Type "sqlite3 db.sqlite3" into the command line from the location of your database
+Type "select * from user;"
+Type ".tables" 
+If it gives a text called "user" and "resume_list" under it works!
