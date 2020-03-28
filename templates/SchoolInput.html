@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>School Information</h1>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <form method="POST" action="">
+                    <fieldset class="form-group">
+                      <legend class="border-bottom mb-4">Input School Information</legend>
+                      <div class="form-group">
+                        {{ form.schoolName.label(clss="form-control-label") }}
+                        {{ form.schoolName(clss="form-control form-contorl-lg") }}
+                      </div>
+                      <div class="form-group">
+                        {{ form.schoolDegree.label(clss="form-control-label") }}
+                        {{ form.schoolDegree(clss="form-control form-contorl-lg") }}
+                      </div>
+                      <div class="form-group">
+                        {{ form.schoolStartDate.label(clss="form-control-label") }}
+                        {{ form.schoolStartDate(clss="form-control form-contorl-lg") }}
+                      </div>
+                      <div class="form-group">
+                        {{ form.schoolEndDate.label(clss="form-control-label") }}
+                        {{ form.schoolEndDate(clss="form-control form-contorl-lg") }}
+                      </div>
+                      <button class="buttonPress" type="submit">Submit</button>
+
+                  </fieldset>
+              </form>
+        </form>
+    </div>
+{% endblock content%}
