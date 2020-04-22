@@ -36,33 +36,17 @@ class User(UserMixin, db.Model):
 
 class ResumeList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    contact = db.Column(db.String(200))
-    work = db.Column(db.String(200))
+    name = db.Column(db.String(200))
+    resume = db.Column(db.LargeBinary)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
         return f'<post: {self.text}>'
 
-posts = [
-    {
-        'author': 'Sair',
-        'title': 'Resume One',
-        'content': 'random info',
-        'date_posted': 'April 1st'
-    },
-    {
-        'author': 'Anthony',
-        'title': 'Resume Two',
-        'content': 'random info',
-        'date_posted': 'April 2nd'
-    }
-]
-
-
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', posts=posts)
+    return render_template('home.html')
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -92,6 +76,16 @@ def login():
                 return redirect(url_for('home'))
         flash('Incorrect username/password. Try again.')
     return render_template('login.html', title='Login', form=form)
+
+
+@app.route('/save', methods=['POST'])
+def save():
+    file = request.files['inputFile']
+
+    newFile = ResumeList(name=file.name, resume=file.read())
+    db.session.add(newFile)
+    db.session.commit()
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)
