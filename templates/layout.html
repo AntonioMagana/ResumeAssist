@@ -23,13 +23,8 @@
           <div class="navbar-nav nav-item">
             <a class="nav-link text-expanded" href="{{ url_for('home') }}">Home</a>
           </div>
-          <div class="dropdown nav-item">
-            <button class="dropbtn">Create Resume
-            </button>
-            <div class="dropdown-content">
-              <a href="{{url_for('schoolInput')}}">Schools</a>
-              <a href="#">Work</a>
-            </div>
+          <div class="navbar-nav nav-item">
+            <a class="nav-link text-expanded" href="{{ url_for('questions') }}">Create Resume</a>
           </div>
           <div class="navbar-nav nav-item">
             <a class="nav-link text-expanded" href="{{ url_for('login') }}">Login</a>

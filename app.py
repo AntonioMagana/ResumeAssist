@@ -3,7 +3,7 @@ from flask_login import current_user, login_required, login_user, logout_user
 from flask_login import LoginManager
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
-from forms import RegistrationForm, LoginForm, SchoolForm
+from forms import RegistrationForm, LoginForm, ResumeForm
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
@@ -65,15 +65,15 @@ def home():
     return render_template('home.html', posts=posts)
 
 #did not do database stuff yet
-@app.route("/schoolInput")
-def schoolInput():
-    form = SchoolForm()
+@app.route("/questions", methods=['GET','POST'])
+def questions():
+    form = ResumeForm()
     #if form.validate_on_submit():
         #db.session.add()
         #db.session.commit()
         #flash('You submitted data for your resume')
         #return redirect(url_for('home')) #probably just redirect to the next questionnaire page like work exp
-    return render_template('SchoolInput.html',title='School Information',form=form)
+    return render_template('QTest.html',title='Resume Questions',form=form)
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
