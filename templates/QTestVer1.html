@@ -1,0 +1,257 @@
+ <!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background: #fafafa;
+    color: #333333;
+    margin-top: 5rem;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: #444444;
+  }
+
+  h6{
+    color: #000000;
+  }
+
+  .bg-steel {
+    background-color: #5f788a;
+  }
+
+  #mainNav .navbar-nav .nav-item .nav-link{ /* color of links in nav bar */
+    color:rgba(255,255,255,7);
+  }
+
+  .nav-item a{     /* removes underline from nav bar links */
+    color: #FFFFFF;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .navbar-nav {                   /*has the links in nav bar in a single line */
+    display: flex;
+    list-style: none;
+  }
+
+  .content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+  .form-label{
+    padding: 10px 20px;
+    background:#ffffff
+  }
+
+  /**---------------------------form css---------------------------------**/
+  * {
+    box-sizing: border-box;
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .container-form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  .col-50 {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+  }
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+</style>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    <title>Resume Assist- Question Form </title>
+
+
+</head>
+<body>
+  <nav class="navbar bg-steel">
+    <div class="container">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <div class="navbar-nav nav-item">
+            <a class="nav-link text-expanded" href="{{ url_for('home') }}">Home</a>
+          </div>
+          <div class="navbar-nav nav-item">
+            <a class="nav-link text-expanded" href="{{ url_for('questions') }}">Create Resume</a>
+          </div>
+          <div class="navbar-nav nav-item">
+            <a class="nav-link text-expanded" href="{{ url_for('login') }}">Login</a>
+          </div>
+          <div class="navbar-nav nav-item">
+            <a class="nav-link text-expanded" href="{{ url_for('register') }}">Register</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-form">
+  <form action="/action_page.php">
+    <h2>Input School Information</h2>
+    <div class="row">
+      <div class = "col-25">
+        {{ form.schoolName.label() }}
+      </div>
+      <div class = "col-75">
+        {{ form.schoolName() }}
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-25">
+        {{ form.schoolDegree.label() }}
+      </div>
+      <div class = "col-75">
+        {{ form.schoolDegree() }}
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-25">
+        {{ form.schoolStartDate.label(class="") }}
+      </div>
+      <div class = "col-25">
+        {{ form.schoolStartDate(class="") }}
+      </div>
+
+      <div class = "col-25">
+        {{ form.schoolEndDate.label(class="") }}
+      </div>
+      <div class = "col-25">
+        {{ form.schoolEndDate(class="") }}
+      </div>
+    </div>
+    <h2>Input Project Information</h2>
+    <div class = "row">
+      <div class = "col-25">
+        {{ form.projectTitle.label(class="") }}
+      </div>
+      <div class = "col-75">
+        {{ form.projectTitle(class="") }}
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-25">
+        {{ form.projectDescription.label(class="") }}
+      </div>
+      <div class = "col-75">
+        {{ form.projectDescription(class="") }}
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-25">
+        {{ form.projectTime.label(class="") }}
+      </div>
+      <div class = "col-75">
+        {{ form.projectTime(class="") }}
+      </div>
+    </div>
+    <h2>Input Work Information</h2>
+    <div class = "row">
+      <div class = "col-25">
+        {{ form.workTitle.label(class="") }}
+      </div>
+      <div class = "col-75">
+        {{ form.workTitle(class="") }}
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-25">
+        {{ form.workDescription.label(class="") }}
+      </div>
+      <div class = "col-75">
+        {{ form.workDescription(class="") }}
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-25">
+        {{ form.workStartDate.label(class="") }}
+      </div>
+      <div class = "col-25">
+        {{ form.workStartDate(class="") }}
+      </div>
+      <div class = "col-25">
+        {{ form.workEndDate.label(class="") }}
+      </div>
+      <div class = "col-25">
+        {{ form.workEndDate(class="") }}
+      </div>
+    </div>
+    <div class="row">
+      <textarea id="subject" name="subject" placeholder="Gotta edit this somehow" style="height:200px"></textarea>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+    </form>
+  </div>
+
+</body>
+</html>

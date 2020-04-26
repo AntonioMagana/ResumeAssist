@@ -73,7 +73,7 @@ def questions():
         #db.session.commit()
         #flash('You submitted data for your resume')
         #return redirect(url_for('home')) #probably just redirect to the next questionnaire page like work exp
-    return render_template('QTest.html',title='Resume Questions',form=form)
+    return render_template('QTest2.html',title='Resume Questions',form=form)
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
