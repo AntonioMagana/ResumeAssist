@@ -2,7 +2,7 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}
-Resume Assist
+Selection - Resume Assist
 {% endblock %}
 
 {% block styles %}
@@ -20,11 +20,19 @@ Resume Assist
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a style="color: white" class="nav-link" href="{{ url_for('login') }}">Login</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('dashboard') }}">Home
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a style="color: white" class="nav-link" href="{{ url_for('register') }}">Register</a>
+            <a class="nav-link" href="{{ url_for('selection') }}">Create</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('home') }}">Logout</a>
           </li>
         </ul>
       </div>
@@ -34,48 +42,56 @@ Resume Assist
   <div class="container">
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
-      <h1 class="display-3">Welcome to Resume Assist <img class="card-img-smallest" src="" alt="Logo"></h1>
-      <h3> Generate your new resume today!</h3>
+      <h1 class="display-3">Select A Template</h1>
+      <p class="lead">Any additional changes can be applied after selecting.</p>
     </header>
     <!-- Page Features -->
     <div class="row text-center">
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
-            <h4 class="card-title">Login</h4>
-            <p class="card-text">Already have an account? Sign in here.</p>
+            <h4 class="card-title">Template One</h4>
           </div>
           <div class="card-footer">
-            <a href="{{ url_for('login') }}" class="btn btn-primary">Sign In</a>
+            <a href="#" class="btn btn-primary">Select</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
-            <h4 class="card-title">Register</h4>
-            <p class="card-text">Don't have an account yet? Sign up here.</p>
+            <h4 class="card-title">Template Two</h4>
           </div>
           <div class="card-footer">
-            <a href="{{ url_for('register') }}" class="btn btn-primary">Sign Up</a>
+            <a href="#" class="btn btn-primary">Select</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
-            <h4 class="card-title">Create Resume</h4>
-            <p class="card-text">Start filling out information for your resume now!</p>
+            <h4 class="card-title">Template Three</h4>
           </div>
           <div class="card-footer">
-            <a href="{{ url_for('questions') }}" class="btn btn-primary">Start Now</a>
+            <a href="#" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Template Four</h4>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Select</a>
           </div>
         </div>
       </div>
     </div>
-      <div style="padding-top: 72px">
-      &nbsp;
-      </div>
     <!-- /.row -->
   </div>
   <!-- /.container -->
@@ -89,5 +105,4 @@ Resume Assist
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 {% endblock %}
