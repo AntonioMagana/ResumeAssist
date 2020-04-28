@@ -2,7 +2,7 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}
-Home - Resume Assist
+Selection - Resume Assist
 {% endblock %}
 
 {% block styles %}
@@ -42,9 +42,8 @@ Home - Resume Assist
   <div class="container">
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
-      <h1 class="display-3">Home</h1>
-      <p class="lead">Access all your resumes here. You can either edit/delete existing resumes or get started with creating a new one.</p>
-      <a href="{{ url_for('selection') }}" class="btn btn-primary btn-lg">Create a new resume!</a>
+      <h1 class="display-3">Select A Template</h1>
+      <p class="lead">Any additional changes can be applied after selecting.</p>
     </header>
     <!-- Page Features -->
     <div class="row text-center">
@@ -52,12 +51,10 @@ Home - Resume Assist
         <div class="card h-100">
           <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
-            <h4 class="card-title">Resume One</h4>
-            <p class="card-text">Quick Synopsis Of Resume Info</p>
+            <h4 class="card-title">Template One</h4>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
+            <a href="#" class="btn btn-primary">Select</a>
           </div>
         </div>
       </div>
@@ -65,12 +62,10 @@ Home - Resume Assist
         <div class="card h-100">
           <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
-            <h4 class="card-title">Resume Two</h4>
-            <p class="card-text">Quick Synopsis Of Resume Info</p>
+            <h4 class="card-title">Template Two</h4>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
+            <a href="#" class="btn btn-primary">Select</a>
           </div>
         </div>
       </div>
@@ -78,12 +73,10 @@ Home - Resume Assist
         <div class="card h-100">
           <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
-            <h4 class="card-title">Resume Three</h4>
-            <p class="card-text">Quick Synopsis Of Resume Info</p>
+            <h4 class="card-title">Template Three</h4>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
+            <a href="#" class="btn btn-primary">Select</a>
           </div>
         </div>
       </div>
@@ -91,12 +84,10 @@ Home - Resume Assist
         <div class="card h-100">
           <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
-            <h4 class="card-title">Resume Four</h4>
-            <p class="card-text">Quick Synopsis Of Resume Info</p>
+            <h4 class="card-title">Template Four</h4>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
+            <a href="#" class="btn btn-primary">Select</a>
           </div>
         </div>
       </div>
@@ -114,5 +105,4 @@ Home - Resume Assist
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 {% endblock %}

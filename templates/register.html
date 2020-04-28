@@ -2,19 +2,36 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}
-Register
+Register - Resume Assist
 {% endblock %}
 
 {% block styles %}
-{{super()}}
-<link rel="stylesheet" href="{{url_for('.static', filename='main.css')}}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block content %}
-<div class="header">
-        <h1><a style="text-decoration: none; color: white" href="{{ url_for('home') }}">Resume Assist</a></h1>
-</div>
-<div class="container">
+<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('home') }}">Resume Assist</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a style="color: white" class="nav-link" href="{{ url_for('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a style="color: white" class="nav-link" href="{{ url_for('register') }}">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<body>
+<div style="padding-top: 150px" class="container">
   <form class="form-signin" method="POST" action="/register">
     <h2 class="form-signin-heading">Sign Up</h2>
     {{ form.hidden_tag() }}
@@ -29,4 +46,20 @@ Register
         Already have an account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
     </large>
 </div>
+</body>
+<div style="padding-top: 67px">
+    &nbsp;
+</div>
+<!-- /.container -->
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Resume Assist 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 {% endblock %}

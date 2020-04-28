@@ -1,4 +1,32 @@
-Type "sqlite3 db.sqlite3" into the command line from the location of your database
-Type "select * from user;"
-Type ".tables" 
-If it gives a text called "user" and "resume_list" under it works!
+ALL OF THE FOLLOWING COMMANDS SHOULD BE ENTERED INTO THE TERMINAL FROM THE CODE EDITOR
+
+
+CREATING A NEW DATABASE (In the event that the current one is corrupted or deleted)
+
+"cd" into the project folder
+
+(This will allow you to enter python commands into the terminal)
+Type "python"
+
+(This imports the database from your app folder into an actual file)
+Type "from app import db"
+
+(This will create the tables that were specified in the app.py file)
+Type "db.create_all()"
+
+
+
+ACCESSING THE DATABASE
+
+"cd" into the project folder
+
+(This command accesses the database)
+Type "sqlite3 db.sqlite3"
+
+(This command will show what tables are available in the database)
+Type ".tables"     
+(If it gives a text called "user" and "resume_list" it works)
+
+(This will show the entries in a given table)
+Type "select * from user;" or "select * from resume_list;"
+(* here tells the system to show all entries in the table)

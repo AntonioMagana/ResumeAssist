@@ -1,38 +1,82 @@
 {% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Resume Assist
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock %}
 
 {% block content %}
-{{ super() }}
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-    <meta charset="UTF-8">
-    <title>Resume Assist</title>
-    <div class="header">
-        <h1><a style="text-decoration: none; color: white" href="{{ url_for('home') }}">Resume Assist</a></h1>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('home') }}">Resume Assist</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a style="color: white" class="nav-link" href="{{ url_for('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a style="color: white" class="nav-link" href="{{ url_for('register') }}">Register</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <h2 style="text-align: center "> Generate your new resume today!</h2>
-</head>
-<body>
-    <h3> Already have an account? Sign in here.</h3>
-    <div class="box">
-        <h1><a style="text-decoration: none; color: white" href="{{ url_for('login') }}">Login</a></h1>
+  </nav>
+  <!-- Page Content -->
+  <div class="container">
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Welcome to Resume Assist <img class="card-img-smallest" src="" alt="Logo"></h1>
+      <h3> Generate your new resume today!</h3>
+    </header>
+    <!-- Page Features -->
+    <div class="row text-center">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Login</h4>
+            <p class="card-text">Already have an account? Sign in here.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('login') }}" class="btn btn-primary">Sign In</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Register</h4>
+            <p class="card-text">Don't have an account yet? Sign up here.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('register') }}" class="btn btn-primary">Sign Up</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <h3> Don't have an account yet? Sign up here.</h3>
-    <div class="box">
-    <h1><a style="text-decoration: none; color: white" href="{{ url_for('register') }}">Register</a></h1>
+      <div style="padding-top: 72px">
+      &nbsp;
+      </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Resume Assist 2020</p>
     </div>
+    <!-- /.container -->
+  </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- This is the demo code for the resume upload -->
-<!--     <div class ="container">
-                  <h1>Resume
-                    <form method="Post" action="/save" enctype="multipart/form-data">
-                      <div>
-                        <label for="inputFile">Upload</label>
-                        <input type="file" name="inputFile">
-                      </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                  </h1>
-                </div> -->
-
-</body>
 {% endblock %}
