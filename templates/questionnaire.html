@@ -162,7 +162,7 @@ button:hover {
   <form id="regForm" action="/action_page.php">
     <h1>Resume Information</h1>
     <!-- One "tab" for each step in the form: -->
-    <div class="tab">
+    <div>
     <h2>School:</h2><br>
       {{form.hidden_tag()}}
       {{wtf.form_field(form.schoolName)}}
@@ -179,7 +179,8 @@ button:hover {
       {{ form.schoolCourse3Description() }}
       <br><br><br>
     </div>
-    <div class="tab"><h2>Projects:</h2><br>
+    <div>
+      <h2>Projects:</h2><br>
       {{wtf.form_field(form.projectTitle)}}
       {{ form.projectDescription.label(class__="text_blob") }}
       {{ form.projectDescription(class="") }}
@@ -213,7 +214,8 @@ button:hover {
       </div>
     </div>
     <!--END OF PROJECT SECTION AND START OF WORK SECTION-->
-    <div class="tab"><h2>Work Experience:</h2><br>
+    <div>
+      <h2>Work Experience:</h2><br>
       {{wtf.form_field(form.workTitle)}}
       {{ form.workDescription.label(class="") }}
       {{ form.workDescription(class="") }}
